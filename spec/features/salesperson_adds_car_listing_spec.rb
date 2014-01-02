@@ -27,4 +27,15 @@ feature 'add car listing', %q{
     expect(page).to have_content('Create a Car Listing')
   end
 
+  scenario 'missing or incorrectly formatted information' do
+    visit 'car_listings/new'
+
+    fill_in 'Year', with: '1979'
+    fill_in 'Mileage', with: '150K'
+    click_button 'Create'
+
+    expect(page).to have_content('Please fill out the color.')
+    expect(page).to have_content('Sorry, we can only accept cars from 1980 or later.')
+    expect(page).to have_content('Please enter mileage as a number, with no commas.')
+  end
 end
