@@ -34,8 +34,8 @@ feature 'add car listing', %q{
     fill_in 'Mileage', with: '150K'
     click_button 'Create'
 
-    expect(page).to have_content('Please fill out the color.')
-    expect(page).to have_content('Sorry, we can only accept cars from 1980 or later.')
-    expect(page).to have_content('Please enter mileage as a number, with no commas.')
+    expect(page).to have_content("Color can't be blank")
+    expect(page).to have_content('Year must be greater than or equal to 1980')
+    expect(page).to have_content('Mileage is not a number')
   end
 end

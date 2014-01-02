@@ -4,16 +4,26 @@
 
 <%= form_for @car_listing do |f| %>
 
+<% if @car_listing.errors.any? %>
+  <h2><%= pluralize(@car_listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+  <ul>
+  <% @car_listing.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <p>
-  <%= f.label :color %><br />
+  <%= f.label :color %>
   <%= f.text_field :color %>
 </p>
 <p>
-  <%= f.label :year %><br />
+  <%= f.label :year %>
   <%= f.text_field :year %>
 </p>
 <p>
-  <%= f.label :mileage %><br />
+  <%= f.label :mileage %>
   <%= f.text_field :mileage %>
 </p>
 <p>
