@@ -14,7 +14,7 @@ feature 'add car listing', %q{
 # If I do not specify all of the required information in the required formats, the car is not recorded and I am presented with errors.
 # Upon successfully creating a car, I am redirected so that I can create another car.
 
-  scenario 'create a valid car' do
+  scenario 'create a valid car listing' do
     visit 'car_listings/new'
 
     fill_in 'Color', with: 'blue'
