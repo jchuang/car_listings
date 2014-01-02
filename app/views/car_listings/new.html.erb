@@ -1,0 +1,24 @@
+<h1>Create a Car Listing</h1>
+
+<%= form_for @car_listing do |f| %>
+
+<p>
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+</p>
+<p>
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+</p>
+<p>
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %>
+</p>
+<p>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</p>
+
+<%= f.submit 'Create' %>
+
+<% end %>

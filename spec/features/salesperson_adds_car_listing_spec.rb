@@ -15,7 +15,7 @@ feature 'add car listing', %q{
 # Upon successfully creating a car, I am redirected so that I can create another car.
 
   scenario 'create a valid car' do
-    visit 'cars/new'
+    visit 'car_listings/new'
 
     fill_in 'Color', with: 'blue'
     fill_in 'Year', with: '1989'
